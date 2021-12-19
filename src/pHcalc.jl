@@ -1,7 +1,7 @@
 using Optim, Plots
 module pHcalc
 
-export Neutral,Acid, System, α,pHsolve, minimise
+export Neutral,Acid, System, α,pHsolve, minimise, plot_distribution
 
 struct Acid
 	ka::Vector{Float64}
