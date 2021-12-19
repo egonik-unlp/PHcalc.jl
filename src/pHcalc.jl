@@ -1,7 +1,7 @@
 using Optim
 module pHcalc
 
-export Neutral, System, α,pHsolve, minimise
+export Neutral,Acid, System, α,pHsolve, minimise
 
 struct Acid
 	ka::Vector{Float64}
