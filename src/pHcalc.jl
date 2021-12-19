@@ -79,7 +79,7 @@ end
 
 function plot_distribution(acid::Acid)
 	interval=1:.01:14
-	plot= (x-> α(acid, x)).(interval) |> x-> hcat(x...)' |> x-> Plots.plot(interval, x, legend=:false)
+	plot= (x-> α(acid, x)).(interval) |> x-> hcat(x...)' |> x-> plot(interval, x, legend=:false)
 	xlabel!(plot, "pH")
 	ylabel!(plot, "Fracción de concentración")
 
