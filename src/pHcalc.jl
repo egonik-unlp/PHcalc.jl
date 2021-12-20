@@ -1,4 +1,4 @@
-using Optim, Plots
+using Optim, Plots, Plotly
 module pHcalc
 
 export Neutral,Acid, System, α,pHsolve, minimise, plot_distribution
@@ -78,6 +78,7 @@ function minimise(sys::System,pH)
 end
 
 function plot_distribution(acid::Acid)
+	plotly()
 	interval=1:.01:14
 	plot= (x-> α(acid, x)).(interval) |> x-> hcat(x...)' |> x-> plot(interval, x, legend=:false)
 	xlabel!(plot, "pH")
