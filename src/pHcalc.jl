@@ -1,7 +1,7 @@
-using Optim, Plots, Plotly
+using Optim
 module pHcalc
 
-export Neutral,Acid, System, α,pHsolve, minimise, plot_distribution
+export Neutral,Acid, System, α,pHsolve, minimise
 
 struct Acid
 	ka::Vector{Float64}
@@ -77,12 +77,12 @@ function minimise(sys::System,pH)
 	 abs(x)
 end
 
-function plot_distribution(acid::Acid)
-	plotly()
-	interval=1:.01:14
-	plot= (x-> α(acid, x)).(interval) |> x-> hcat(x...)' |> x-> plot(interval, x, legend=:false)
-	xlabel!(plot, "pH")
-	ylabel!(plot, "Fracción de concentración")
+# function plot_distribution(acid::Acid)
+# 	plotly()
+# 	interval=1:.01:14
+# 	plot= (x-> α(acid, x)).(interval) |> x-> hcat(x...)' |> x-> plot(interval, x, legend=:false)
+# 	xlabel!(plot, "pH")
+# 	ylabel!(plot, "Fracción de concentración")
 
 end
 
