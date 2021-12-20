@@ -1,5 +1,5 @@
 using Optim
-module pHcalc
+module PHcalc
 
 export Neutral,Acid, System, α,pHsolve, minimise
 
@@ -84,7 +84,7 @@ end
 # 	xlabel!(plot, "pH")
 # 	ylabel!(plot, "Fracción de concentración")
 
-end
+#end
 
 
 
