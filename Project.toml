@@ -1,6 +1,6 @@
 name = "PHcalc"
 uuid = "a110ef22-8a98-4da7-b9d8-cfb8dc232cf9"
-authors = ["Eduardo Gonik <gonik@quimica.unlp.edu.ar>"]
+authors = ["Juan Mac Donagh <macjuan17@gmail.com>","Eduardo Gonik <gonik@quimica.unlp.edu.ar>"]
 version = "0.1.0"
 
 [deps]
