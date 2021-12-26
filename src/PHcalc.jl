@@ -1,5 +1,5 @@
-using Optim
 module PHcalc
+using Optim
 
 export Neutral,Acid, System, α,pHsolve, minimise
 
