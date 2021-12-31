@@ -1,7 +1,7 @@
 module PHcalc
 using Optim
 
-export Neutral,Acid, System, α,pHsolve, minimise
+export Neutral,Acid, System, α,pHsolve, minimise, pHfast
 
 struct Acid
 	ka::Vector{Float64}
@@ -77,16 +77,20 @@ function minimise(sys::System,pH)
 	 abs(x)
 end
 
-# function plot_distribution(acid::Acid)
-# 	plotly()
-# 	interval=1:.01:14
-# 	plot= (x-> α(acid, x)).(interval) |> x-> hcat(x...)' |> x-> plot(interval, x, legend=:false)
-# 	xlabel!(plot, "pH")
-# 	ylabel!(plot, "Fracción de concentración")
-
-#end
-
-
+function pHfast(sys, precision=.01)
+	function minimise(pH)
+		h3o=10.0^(-pH)
+     	oh = (10.0^(-14))/h3o
+	 	x = (h3o - oh)
+		for specie in sys.species
+			x+=(specie.conc.*specie.charge.*α(specie,pH))|> sum
+		end
+	 	abs(x)
+	end
+	phv=1:precision:14
+	minimise.(phv) |> argmin |> x -> getindex(phv,x) 
+		
+end
 
 
 end
