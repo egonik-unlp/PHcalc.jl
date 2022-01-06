@@ -3,7 +3,7 @@ using Optim
 
 export Neutral,Acid, System, α,pHsolve, minimise, pHfast
 
-struct Acid
+mutable struct Acid
 	ka::Vector{Float64}
 	conc::Float64
 	charge::Vector{Int64}
@@ -22,7 +22,7 @@ struct Acid
 		end
 end
 	
-struct Neutral
+mutable struct Neutral
 	charge::Union{Vector{Int64},Int64}
 	conc::Float64
 end
