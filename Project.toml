@@ -1,7 +1,7 @@
 name = "PHcalc"
 uuid = "a110ef22-8a98-4da7-b9d8-cfb8dc232cf9"
 authors = ["Juan Mac Donagh <macjuan17@gmail.com>", "Eduardo Gonik <gonik@quimica.unlp.edu.ar>"]
-version = "0.1.2"
+version = "0.1.3"
 
 [deps]
 Optim = "429524aa-4258-5aef-a3af-852621145aeb"
