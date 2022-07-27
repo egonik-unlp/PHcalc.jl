@@ -49,7 +49,7 @@ export Neutral, Acid, System, α, pHsolve, minimise, pHfast, AbstractSpecies
 		[1]
 	end
 		
-	function pHsolve(sys)
+	function pHsolve(sys :: System)
 		function minimise(pH)
 			h3o=10.0^(-pH)
 		oh = (10.0^(-14))/h3o
@@ -69,7 +69,7 @@ export Neutral, Acid, System, α, pHsolve, minimise, pHfast, AbstractSpecies
 	end
 
 
-	function minimise(sys::System,pH)
+	function minimise(sys :: System,pH)
 		h3o=10.0^(-pH)
 		oh = (10.0^(-14))/h3o
 		 x = (h3o - oh)
@@ -79,7 +79,7 @@ export Neutral, Acid, System, α, pHsolve, minimise, pHfast, AbstractSpecies
 		 abs(x)
 	end
 
-	function pHfast(sys, precision=.01)
+	function pHfast(sys :: System, precision=.01)
 		function minimise(pH)
 			h3o=10.0^(-pH)
 		oh = (10.0^(-14))/h3o
